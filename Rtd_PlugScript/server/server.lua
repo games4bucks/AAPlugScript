@@ -25,12 +25,28 @@ AddEventHandler('playerJoining', function()
     end
 end)
 
+local function Notify(src, message, type)
+    if Config.Notification == "qb" then
+        TriggerClientEvent('QBCore:Notify', src, message, type)
+    elseif Config.Notification == "ox" then
+        TriggerClientEvent('ox_lib:notify', src, {description = message, type = type})
+    elseif Config.Notification == "okok" then
+        TriggerClientEvent('okokNotify:Alert', src, "Drug Plug", message, 5000, type)
+    elseif Config.Notification == "mNotify" then
+        TriggerClientEvent('mythic_notify:client:SendAlert', src, { type = type, text = message, length = 5000 })
+    elseif Config.Notification == "ps-ui" then
+        TriggerClientEvent('ps-ui:notify', src, message, type)
+    else
+        print("[Drug Plug] ERROR: No valid notification system set! Check Config.Notification.")
+    end
+end
+
 local function AddItemToInventory(xPlayer, item, amount, src)
     if Config.Inventory == "qb-inventory" then
         xPlayer.Functions.AddItem(item, amount)
-    elseif Config.Inventory == "esx" then
+    elseif Config.Inventory == "ox_inventory" then
         xPlayer.addInventoryItem(item, amount)
-    elseif Config.Inventory == "ox-inventory" then
+    elseif Config.Inventory == "ox_inventory" then
         exports.ox_inventory:AddItem(src, item, amount)
     elseif Config.Inventory == "codem-inventory" then
         exports['codem-inventory']:AddItem(src, item, amount)
@@ -73,7 +89,7 @@ RegisterNetEvent('drug_plug:buyItem', function(plug)
         end
 
         if not hasLicense then
-            TriggerClientEvent('QBCore:Notify', src, 'You are not authorized to buy from this plug!', 'error')
+            Notify(src, 'You are not authorized to buy from this plug!', 'error')
             return
         end
     end
@@ -86,12 +102,15 @@ RegisterNetEvent('drug_plug:buyItem', function(plug)
             AddItemToInventory(xPlayer, item.item, item.amount, src)
             playerCooldowns[src] = os.time() + (3 * 3600) -- Set 3-hour cooldown
             TriggerClientEvent('drug_plug:doTransactionAnimation', src)
+            Notify(src, 'You successfully purchased from the plug!', 'success')
         elseif ESX and xPlayer.getAccount(paymentType).money >= price then
             xPlayer.removeAccountMoney(paymentType, price)
             AddItemToInventory(xPlayer, item.item, item.amount, src)
             playerCooldowns[src] = os.time() + (3 * 3600) -- Set 3-hour cooldown
             TriggerClientEvent('drug_plug:doTransactionAnimation', src)
+            Notify(src, 'You successfully purchased from the plug!', 'success')
         else
+            Notify(src, 'You do not have enough money!', 'error')
             return
         end
     end
