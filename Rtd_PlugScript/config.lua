@@ -1,7 +1,7 @@
 Config = {}
 Config.Cooldown = 120 -- Cooldown in minutes
 Config.Notification = "qb" -- Change to "qb", "ox", "okok", "mNotify", "ps-ui" if needed
-Config.Inventory = "qb-inventory" -- Change to "qb-inventory", "ox-inventory", "codem-inventory", "ps-inventory", "ak47_qb_inventory" if needed
+Config.Inventory = "qb-inventory" -- Change to "qb-inventory", "ox_inventory", "codem-inventory", "ps-inventory", "ak47_qb_inventory" if needed
 Config.Plugs = {
     CokePlug = {
         TextNotification = "Press ~INPUT_CONTEXT~ to gather Coke for $1200000 per 2000 pounds",
