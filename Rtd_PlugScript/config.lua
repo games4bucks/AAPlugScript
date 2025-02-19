@@ -17,7 +17,7 @@ Config.Plugs = {
             ped = 'cs_lestercrest'
         },
         Authorized = {
-            License = "license:example_license_2" -- Set a specific license ID or leave nil to disable license restriction
+            License = "license:example_license_1" -- Set a specific license ID or leave nil to disable license restriction
         }
     },
     MethPlug = {
