@@ -60,21 +60,7 @@ Authorized = {
 
 Customizing Items & Prices:
 
-Each plug can be edited in config.lua. Example:
-
-CokePlug = {
-    TextNotification = "Press ~INPUT_CONTEXT~ to gather Cocaine for $1200000 per 2000 pounds",
-    Items = {
-        { label = "Coke", item = "coke_pure", amount = 2000, price = 1200000 }
-    },
-    ped = {
-        coords = vector4(-98.6536, -2232.4239, 7.8117, 319.3485),
-        ped = 'cs_lestercrest'
-    },
-    Authorized = {
-        License = "license:your-license-id"
-    }
-}
+Each plug can be edited in config.lua.
 
 To add more plugs, duplicate this format and modify item names, prices, and locations.
 
