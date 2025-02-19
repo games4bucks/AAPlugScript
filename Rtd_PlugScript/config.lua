@@ -7,7 +7,7 @@ Config.Plugs = {
         TextNotification = "Press ~INPUT_CONTEXT~ to gather Coke for $1200000 per 2000 pounds",
         Account = {
             type = "item",
-            payment = "cash" -- Set the Account payment type ("cash", "bank", or "black_money") 
+            payment = "cash" -- Set the Account payment type ("cash", "money", "bank", or "black_money") 
         },
         Items = {
             { label = "Coke", item = "cokebaggy", amount = 2000, price = 1200000 }
@@ -24,7 +24,7 @@ Config.Plugs = {
         TextNotification = "Press ~INPUT_CONTEXT~ to gather Coke for $1000000 per 2000 pounds",
         Account = {
             type = "item",
-            payment = "cash" -- Set the Account payment type ("cash", "bank", or "black_money") 
+            payment = "cash" -- Set the Account payment type ("cash", "money", "bank", or "black_money") 
         },
         Items = {
             { label = "Coke", item = "cokebaggy", amount = 2000, price = 1000000 }
@@ -41,7 +41,7 @@ Config.Plugs = {
         TextNotification = "Press ~INPUT_CONTEXT~ to gather Fentanyl for $5000000 per 20000 pounds",
         Account = {
             type = "item",
-            payment = "cash" -- Set the Account payment type ("cash", "bank", or "black_money") 
+            payment = "cash" -- Set the Account payment type ("cash", "money", "bank", or "black_money") 
         },
         Items = {
             { label = "Fentanyl", item = "fentanyl_pure", amount = 20000, price = 5000000 }
@@ -60,8 +60,9 @@ Config.Plugs = {
 -- 1. Copy the structure of one of the existing plug entries (e.g., CokePlug).
 -- 2. Change the name of the plug (e.g., MethPlug, HeroinPlug).
 -- 3. Update the TextNotification to match the drug being gathered.
--- 4. Set the Account payment type ("cash", "bank", or "black_money").
+-- 4. Set the Account payment type ("cash", "money", "bank", or "black_money") .
 -- 5. Define the Items (item name, amount, and price).
 -- 6. Update the ped information (coordinates and model).
 -- 7. Set the Authorized License (leave nil to disable license restriction).
--- 8. Save and restart your server to apply changes.
+-- 8. check fx manifest to make sure your dependencies make sure you comment out what you dont need (IF YOUR USING ESX THEN YOU NEED TO COMMENT OUT QB STUFF AND UNCOMMENT ESX).
+-- 9. Save and restart your server to apply changes.
