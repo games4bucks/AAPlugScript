@@ -25,5 +25,6 @@ dependencies {
     --'Ak47_qb_inventory', -- Optional, remove if not using ak47 qb inventory
 }
 escrow_ignore {
-  'script/config.lua',  -- Only ignore one file
+  '/config.lua',  -- Only ignore one file
+    '/readme.md',  -- Only ignore one file
 }
