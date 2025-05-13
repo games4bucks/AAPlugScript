@@ -1,6 +1,6 @@
 fx_version 'cerulean'
 game 'gta5'
-
+lua54 'yes'
 name 'Standalone Drug Plug'
 description 'A standalone ESX/QB-Core/OX Inventory script for drug plugs with animations and notifications.'
 author 'RichPorter'
@@ -23,4 +23,7 @@ dependencies {
     --'codem-inventory', -- Optional, remove if not using Codem inventory
     --'ps-inventory', -- Optional, remove if not using ps inventory
     --'Ak47_qb_inventory', -- Optional, remove if not using ak47 qb inventory
+}
+escrow_ignore {
+  'script/config.lua',  -- Only ignore one file
 }
